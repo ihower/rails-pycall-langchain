@@ -14,8 +14,9 @@ a Rails + Langchain example using pycall.rb
 3. `rake db:migrate`
 4. you should have Python3, and then
 
+```
 pip install langchain
 pip install tiktoken
 pip install pypdf
 pip install faiss-cpu
-
+```
