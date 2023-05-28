@@ -1,0 +1,32 @@
+<h1>Documents upload</h1>
+
+<div class="row mb-3">
+  <div class="col-3">
+  <%= form_for Document.new, :url => documents_path(@dataset) do |f| %>
+    <%= f.file_field :doc, required: true, class: 'mt-3' %>
+  </div>
+
+  <div class="col-3">
+    <%= f.submit "上傳", class: 'btn btn-primary' %>
+  </div>
+  <% end %>
+
+<h1 class="mt-3">Documents List</h1>
+
+<table class="table table-striped table-hover">
+  <tr>
+    <th>檔名</th>
+    <th>檔案類型</th>
+    <th>檔案大小</th>
+    <th>處理狀態</th>
+  </tr>
+
+  <% @documents.each do |doc| %>
+    <tr>
+      <td><%= link_to doc.file_name, document_path(doc) %></td>
+      <td><%= doc.content_type %></td>
+      <td><%= doc.file_size %></td>
+      <td><%= doc.status %></td>
+    </tr>
+  <% end %>
+</table>

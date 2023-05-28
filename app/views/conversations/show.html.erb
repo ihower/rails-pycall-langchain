@@ -1,0 +1,69 @@
+<div class="container">
+  <h2><%= @chat.uuid %> </h2>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header">Conversations</div>
+        <div class="card-body">
+          <p><%= link_to "+ New Conversation" , new_chat_path, :class => "btn btn-primary" %></p>
+
+          <p>
+            <%= select_tag :conversation_id, options_for_select( Conversation.all.map{ |x| [x.display_name, chat_path(x.uuid)] }),  :class => "form-control" %>
+          </p>
+
+        </div>
+      </div>
+
+    </div>
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header">Messages Histroy</div>
+        <div class="card-body">
+          <ul class="list-group" id="messages">
+            <% @chat.messages.each do |message| %>
+              <%= render :partial => "messages/message", :locals => { :message => message } %>
+            <% end %>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <%= form_for Message.new, :url => chat_messages_path(@chat), :remote => true do |f| %>
+
+
+          <div class="form-group">
+                <%= f.label :processing_job, 'Choose Processing Job:' %>
+                <%= f.select :processing_job, Message::PROCESSING_JOBS.invert, {}, class: "form-select" %>
+            </div>
+
+
+            <div class="input-group">
+              <%= f.text_area :content, :id => "message-input", :class => "form-control rounded", :placeholder => "Send a message..." %>
+              <button type="submit" class="btn btn-primary ml-3 rounded">Submit</button>
+            </div>
+
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.getElementById("message-input").focus();
+
+window.onload = function(){
+
+  createConsumer().subscriptions.create({ channel: "ChatChannel", uuid: "<%= @chat.uuid %>" }, {
+    connected() {
+      console.log("Congratulations ! Connected the channel !")
+    },
+    received(data) {
+      document.getElementById("messages").innerHTML += data["html"]
+    },
+  })
+
+  $("#conversation_id").change(function(){
+    window.location.href = $(this).val();
+  })
+
+}
+</script>

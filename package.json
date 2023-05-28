@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@rails/actioncable": "^7.0.4-3",
+    "@rails/activestorage": "^7.0.4-3",
+    "@rails/ujs": "^7.0.4-3"
+  }
+}

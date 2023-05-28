@@ -1,0 +1,9 @@
+<li class="list-group-item" id="message-<%= message.id %>">
+  <% if message.role == 'user' %>
+    <span class="badge bg-secondary"><%= message.role.titleize %></span>
+  <% else %>
+    <span class="badge bg-dark"><%= message.role.titleize %></span>
+  <% end %>
+
+  <%= message.content %>
+</li>
