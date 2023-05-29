@@ -2,6 +2,13 @@
 
 a Rails + Langchain example using pycall.rb
 
+## Features
+
+* Langchain ChatOpenAI
+* Langchain RetrievalQAChain (using OpenAIEmbedding + FAISS vector store)
+* Langchain Agents (using python_repl)
+* Ruby OpenAI gem
+
 ## pycall.rb Example
 
 /examples/
