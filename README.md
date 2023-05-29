@@ -16,7 +16,11 @@ a Rails + Langchain example using pycall.rb
 
 ## Setup
 
-1. you should have Python3, and then
+Install Python 3:
+
+`brew install python`
+
+Install Python packages:
 
 ```
 pip3 install openai
