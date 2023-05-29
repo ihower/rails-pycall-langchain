@@ -1,6 +1,6 @@
 # rails-pycall-langchain
 
-a Rails + Langchain example using pycall.rb
+a Rails + Langchain Chatroom example using pycall.rb
 
 ## Features
 
@@ -9,10 +9,14 @@ a Rails + Langchain example using pycall.rb
 * Langchain Agents (using python_repl)
 * Ruby OpenAI gem
 
+## Rails Background job
+
+Using sucker_punch gem for demo purpose.
+If possible, I would recommend using delayed_job gem(https://github.com/collectiveidea/delayed_job)
+
 ## pycall.rb Example
 
-/examples/
-
+There're some pycall.rb example at /examples
 
 ## Setup
 
