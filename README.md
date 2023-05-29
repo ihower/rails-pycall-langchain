@@ -20,6 +20,8 @@ Install Python 3:
 
 `brew install python`
 
+(記得開新的 Terminal，確認 which python3 有吃到剛裝的 python)
+
 Install Python packages:
 
 ```
@@ -30,6 +32,10 @@ pip3 install pypdf
 pip3 install faiss-cpu
 ```
 
-2. Edit config/secrets.yml, Add your OpenAI key
+2. Edit config/secrets.yml, Add your OpenAI API key
+
+(OpenAI API 跟 ChatGPT 是分開付款的，要分別綁信用卡)
+
 3. `bundle`
 4. `rake db:migrate`
+
