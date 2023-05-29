@@ -22,7 +22,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_24_085740) do
     t.string "doc"
     t.string "file_name"
     t.integer "file_size"
-    t.string "description"
     t.string "status", default: "pending"
     t.string "content_type"
     t.datetime "created_at", null: false
