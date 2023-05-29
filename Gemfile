@@ -62,6 +62,9 @@ gem 'sassc-rails'
 # File uploads
 gem 'carrierwave', '~> 0.11.2'
 
+# Avoid warning: already initialized constant Net::ProtocRetryError
+gem 'net-http'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]

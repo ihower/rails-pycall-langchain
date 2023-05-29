@@ -134,6 +134,8 @@ GEM
     minitest (5.18.0)
     msgpack (1.6.1)
     multi_xml (0.6.0)
+    net-http (0.3.2)
+      uri
     net-imap (0.3.4)
       date
       net-protocol
@@ -216,6 +218,7 @@ GEM
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
     sqlite3 (1.6.2-arm64-darwin)
+    sqlite3 (1.6.2-x86_64-linux)
     sucker_punch (3.1.0)
       concurrent-ruby (~> 1.0)
     thor (1.2.1)
@@ -226,6 +229,7 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.8.2)
+    uri (0.12.1)
     web-console (4.2.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -254,6 +258,7 @@ DEPENDENCIES
   debug
   importmap-rails
   jbuilder
+  net-http
   puma (~> 5.0)
   pycall
   rails (~> 7.0.4, >= 7.0.4.3)
