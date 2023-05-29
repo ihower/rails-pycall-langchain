@@ -9,14 +9,21 @@ a Rails + Langchain example using pycall.rb
 
 ## Setup
 
-1. Edit config/secrets.yml, Add your OpenAI key
-2. `bundle`
-3. `rake db:migrate`
-4. you should have Python3, and then
+### 安裝 python3
 
 ```
-pip install langchain
-pip install tiktoken
-pip install pypdf
-pip install faiss-cpu
+brew install python
+
+# 可能需要先執行一次 python3 在 exit() ?
+python3
+
+pip3 install langchain
+pip3 install tiktoken
+pip3 install pypdf
+pip3 install faiss-cpu
 ```
+
+1. `cp config/secrets.yml.example config/secrets.yml`
+2. Edit config/secrets.yml, Add your OpenAI key
+3. `bundle`
+4. `rake db:migrate`
