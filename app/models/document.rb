@@ -2,7 +2,6 @@ class Document < ApplicationRecord
 
   mount_uploader :doc, DocUploader
 
-  validates_presence_of :doc
 
   before_create :update_doc_metadata
 
@@ -30,7 +29,14 @@ class Document < ApplicationRecord
 
   def parse_and_index!
     # pip install pypdf
-    loader = LangChain::DocumentLoaders.PyPDFLoader.new(self.doc.path )
+    # pip install docx2txt
+
+    loader = if self.content_type == 'application/pdf'
+              LangChain::DocumentLoaders.PyPDFLoader.new(self.doc.path)
+             elsif self.content_type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+              LangChain::DocumentLoaders.Docx2txtLoader.new(self.doc.path)
+             end
+
     text = loader.load()
 
     chunk_size = 500
