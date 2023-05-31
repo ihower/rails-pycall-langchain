@@ -37,9 +37,6 @@ pip3 install faiss-cpu
 ```
 
 3. Edit config/secrets.yml, Add your OpenAI API key
-
-(注意: OpenAI API 跟 ChatGPT 是分開付款的，要分別綁信用卡)
-
 4. `bundle`
 5. `rake db:migrate`
 6. `rails s`
