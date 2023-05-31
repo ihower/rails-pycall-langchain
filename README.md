@@ -2,9 +2,9 @@
 
 a Rails + Langchain Chatroom example using pycall.rb
 
-langchain: https://github.com/hwchase17/langchain
-pycall.rb: https://github.com/mrkn/pycall.rb
-talk slide: https://ihower.tw/blog/archives/11596
+* langchain: https://github.com/hwchase17/langchain
+* pycall.rb: https://github.com/mrkn/pycall.rb
+* my talk slide: https://ihower.tw/blog/archives/11596
 
 ## Features
 
