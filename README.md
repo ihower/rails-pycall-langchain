@@ -2,21 +2,24 @@
 
 a Rails + Langchain Chatroom example using pycall.rb
 
+slide: https://ihower.tw/blog/archives/11596
+
 ## Features
 
 * Langchain ChatOpenAI
-* Langchain RetrievalQAChain (using OpenAIEmbedding + FAISS vector store)
+* Langchain RetrievalQAChain (using OpenAIEmbedding + FAISS vector store) for PDF upload
 * Langchain Agents (using python_repl)
 * Ruby OpenAI gem
 
 ## Rails Background job
 
 Using sucker_punch gem for demo purpose.
-If possible, I would recommend using delayed_job gem(https://github.com/collectiveidea/delayed_job)
+If possible, I would recommend using delayed_job gem: https://github.com/collectiveidea/delayed_job
 
-## pycall.rb Example
+## About pycall.rb
 
-There're some pycall.rb example at /examples
+1. There're some pycall.rb example at /examples
+2. Rails will load lib/lang_chain.rb
 
 ## Setup
 
@@ -24,7 +27,7 @@ There're some pycall.rb example at /examples
 
 `brew install python`
 
-(注意: 記得開新的 Terminal，確認 which python3 有吃到剛裝的 python)
+(Note: Open a new Terminal and make sure that which python3 has the newly installed python)
 
 2. Install Python packages:
 
